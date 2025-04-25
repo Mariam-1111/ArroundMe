@@ -1,0 +1,37 @@
+﻿@page
+@model first.Pages.Content.AccessDeniedModel
+@{
+    ViewData["Title"] = "Access Denied";
+}
+<div class="container text-center mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-danger" role="alert">
+                <h1 class="display-4">Access Denied</h1>
+                <p class="lead">You do not have permission to view this page.</p>
+                <hr class="my-4">
+                <p>you need to sign in/sign out</p>
+                <a class="btn btn-primary btn-lg" href="/Content/SignIn" role="button">Sign in</a>
+                <a class="btn btn-primary btn-lg" href="/Content/SignUp" role="button">Sign up</a>
+            </div>
+        </div>
+    </div>
+</div>
+<style> 
+    .container {
+        background: rgba(255, 255, 255, 0.5); /* רקע שקוף עם צבע בהיר */
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 23px;
+    }
+    h1{
+        font-family:'Bell MT';
+        font-weight:bold;
+    }
+    p{
+        font-family: 'Bell MT';
+    }body{
+        background: linear-gradient(to right, #fef9f4, #f5e8dc);
+    }
+
+</style>

@@ -1,0 +1,249 @@
+﻿@using Microsoft.AspNetCore.Http
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - title</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/first.styles.css" asp-append-version="true" />
+
+    <style>
+
+        .custom-navbar {
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 60px;
+            padding: 8px 25px;
+            width: fit-content;
+            margin: 10px auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+            .custom-navbar a {
+                text-decoration: none;
+                color: black;
+                font-size: 1.5em;
+                font-family: Gabriola, sans-serif;
+                font-weight: bold;
+                transition: color 0.3s;
+            }
+
+                .custom-navbar a:hover {
+                    color: crimson;
+                }
+
+
+            .custom-navbar ul {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+
+        .navbar-text {
+            font-family: 'Gabriola', sans-serif;
+            font-size: 1.7em;
+            color:darkslategrey;
+        }
+
+        .logo-img {
+            height: 80px;
+            width: auto;
+        }
+
+        body {
+            opacity: 0;
+            transition: opacity 0.5s ease-in;
+        }
+
+            body.loaded {
+                opacity: 1;
+            }
+
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+
+        <nav class="custom-navbar">
+
+
+            <a class="navbar-brand" asp-area="" asp-page="/Index">
+			<img src="/images/logo.svg"  class="logo-img">
+            </a>
+         
+                
+                <ul>
+
+                        
+                        <li><a asp-page="/Content/Index">Home</a></li>
+                        <li><a asp-page="/Content/Restaurants">Restaurants</a></li>
+
+                        <li><a asp-page="/Content/Recipes">Recipes</a></li>
+
+                        <li><a asp-page="/Content/Work">Job</a></li>
+
+                        <li><a asp-page="/Content/Contact us">Contact us</a></li>
+                        <li><a asp-page="/Content/My account">Account</a></li>
+
+
+                    
+                    
+                    @{
+                        var sessionValue = Context.Session.GetString("FullName");
+                        var isLoggedIn = !string.IsNullOrEmpty(sessionValue);
+                    var fullName = Context.Session.GetString("FullName") ?? "";
+                    var username = Context.Session.GetString("Username") ?? "";
+                    }
+                    @if (!isLoggedIn)
+                    {
+                       
+                            <li><a asp-page="/Content/SignUp">Sign Up</a></li>
+                            <li><a asp-page="/Content/SignIn">Sign In</a></li>
+                   
+                        
+                    }
+
+                    </ul>
+                </div> <!-- סוגר את div של navbar-collapse -->
+            </div>
+                @if (!isLoggedIn)
+                {
+                    <span class="navbar-text me-3 custom-font fade-in" style="font-size: 1.7em; color: #666;">
+                        Welcome Visitor
+                    </span>
+                }
+                else
+                {
+                    <div class="d-flex align-items-center fade-in">
+                        <span class="navbar-text me-3 custom-font" style="font-size: 1.7em; color: #666;">
+                            Welcome, @sessionValue
+                        </span>
+                        <style>
+                            .logout-btn {
+                                background-color: transparent;
+                                color: black;
+                                border: 2px solid #666;
+                                padding: 10px 20px;
+                                border-radius: 30px;
+                                font-size: 1.1em;
+                                text-transform: uppercase;
+                                font-family: 'Gabriola', sans-serif;
+                                font-weight: bold;
+                                display: inline-block;
+                                transition: all 0.3s ease;
+                                letter-spacing: 1px;
+                                cursor: pointer;
+                                text-decoration: none;
+                            }
+
+                                .logout-btn:hover {
+                                    background-color: white;
+                                    color: crimson;
+                                    border-color: #666;
+                                    transform: translateY(-3px);
+                                }
+
+                                .logout-btn:focus {
+                                    outline: none;
+                                    box-shadow: 0 0 10px rgba(255, 235, 59, 0.7);
+                                    text-decoration: none;
+                                }
+                        </style>
+
+                        <a class="logout-btn" href="/Content/LogOut" role="button">Logout</a>
+
+                  
+                   </div>
+                <script>
+                                    const isLoggedIn = @isLoggedIn.ToString().ToLower(); // true/false ממש
+                    const username = "@username";
+                    const fullName = "@fullName";
+                    if (!isLoggedIn) {
+                        localStorage.removeItem("isLoggedIn");
+                        localStorage.removeItem("username");
+                        localStorage.removeItem("fullName");
+                   
+                    }
+               else{
+                                localStorage.setItem("isLoggedIn", "true");
+                    localStorage.setItem("username", username);
+                    localStorage.setItem("fullName", fullName);
+                </script>
+                }
+                    
+               
+                
+
+                
+  
+        </nav>
+        </div>
+    </header>
+    @if (IsSectionDefined("FullWidthContent"))
+    {
+        @RenderSection("FullWidthContent", required: false)
+    }
+    else
+    {
+        <div class="container">
+            <main role="main">
+                @RenderBody()
+            </main>
+        </div>
+    }
+    <script>
+             window.addEventListener("load", () => {
+            document.body.classList.add("loaded");
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const elements = document.querySelectorAll("a, button");
+
+            elements.forEach(el => {
+                const href = el.getAttribute("href");
+                const isButtonLink = el.tagName === "BUTTON" && href;
+
+                if ((el.tagName === "A" || isButtonLink) && href && !href.startsWith("#") && !href.startsWith("javascript:") && !el.hasAttribute("target")) {
+                    el.addEventListener("click", (e) => {
+                        e.preventDefault();
+
+                        // בחרי את סוג האנימציה שאת רוצה:
+                        document.body.classList.add("fade-out");
+
+                        setTimeout(() => {
+                            window.location = href;
+                        }, 400);
+                    });
+                }
+            });
+        });
+    </script>
+
+    @*<footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - first - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>*@
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,91 @@
+﻿@page
+@model ContactModel
+@{
+    ViewData["Title"] = "Contact Us";
+}
+@section FullWidthContent {
+    <div class="container" style="background: rgba(255, 255, 255, 0.5); /* רקע שקוף עם צבע בהיר */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+                                     justify-content: center;
+                                     align-items: center;
+                                     margin-top: 30px;
+                                     max-width: 700px;
+    width: 90%;
+border-radius:23px;
+                                     text-align: center;">
+<style> 
+    h1 {
+        font-family: Forte;
+        color: black;
+    }
+    p{
+        font-family: Gabriola;
+        color: black;
+        font-size: 26px;
+    }
+    body{
+                background: linear-gradient(to right, #e3f2fd, #cfd8dc);
+    }
+</style>
+<h1>Contact Us</h1>
+<p>Having technical problems or a suggestion to make this website better, let us know!</p>
+
+<form method="post">
+    
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+    </div>
+    <div>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+    </div>
+    <button type="submit">Send</button>
+</form>
+
+<style>
+    form {
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+        form div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            font-weight: bold;
+                    font-family: Gabriola;
+                    font-size: 24px;
+        }
+
+        form input, form textarea {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+                    font-family: 'Bell MT';
+                    font-size: 24px;
+        }
+
+        form button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color:darkslateblue;
+            color: white;
+            cursor: pointer;
+            font-family: Gabriola;
+                    font-size: 24px;
+        }
+
+            form button:hover {
+                background-color: #555;
+            }
+</style>
+    </div>
+    }

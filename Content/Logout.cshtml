@@ -1,0 +1,13 @@
+﻿@page
+@model first.Pages.Content.LogoutModel
+@{
+}
+
+public IActionResult OnGetLogOut()
+{
+    TempData["ReturnUrl"] = Request.Headers["Referer"].ToString(); // זוכר את הכתובת הקודמת
+    HttpContext.Session.Remove("FullName"); // מנקה את שם המשתמש מ-Session
+    
+   
+    return RedirectToPage("/Index"); // הפניה לדף הבית או דף אחר אחרי ההתנתקות
+}

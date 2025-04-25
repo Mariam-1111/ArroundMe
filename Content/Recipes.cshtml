@@ -1,0 +1,583 @@
+﻿
+@page
+@model GalleryModel
+@{
+    ViewData["Title"] = "Recipes";
+}
+
+    
+<h1>Here are some of our awesome recipes</h1>
+
+<head>
+    <meta charset="UTF-8">
+    
+    <style>
+        h1 {
+            font-family: Forte;
+            color: black;
+            text-align: center;
+        }
+
+        p {
+            font-family: Gabriola;
+            color: black;
+            font-size: 24px;
+        }
+       .hero-section{
+            background: rgba(255, 255, 255, 0.5); /* רקע שקוף עם צבע בהיר */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+           
+        }
+        body{
+           background: linear-gradient(to right, #f5f5f0, #e8e4d9);
+        }
+        
+
+        h1 {
+            margin-bottom: 40px;
+           
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            background: rgba(255, 255, 255, 0.7); /* רקע לבן שקוף */
+            justify-content: center; /* מרכז את הכרטיסיות */
+            border-radius:23px;
+        }
+
+        .recipe {
+            background: linear-gradient(135deg, #ffffff, #fdf6e3);
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .recipe .image {
+                width: 100%;
+
+                height: 100%;
+                object-fit: cover;
+                display: block;
+                border-radius: 15px;
+                margin-bottom: 5px;
+            }
+
+            .recipe .content {
+                display: none;
+                padding: 20px;
+                text-align: center;
+            }
+
+            .recipe.revealed .image {
+                display: none;
+            }
+
+            .recipe.revealed .content {
+                display: block;
+            }
+
+
+            .recipe:hover {
+                transform: scale(1.02);
+            }
+
+            .recipe img {
+                width: 100%;
+                max-height: 100%;
+                object-fit: cover;
+                border-radius: 15px;
+                margin-bottom: 15px;
+            }
+
+            .recipe h3 {
+                margin: 0;
+                color: #333;
+                font-size: 22px;
+                text-align: center;
+            }
+
+            .recipe p {
+                color: #666;
+                font-size: 19px;
+                margin: 10px 0 20px;
+            }
+
+            .recipe button {
+                background: linear-gradient(to right, #ff9966, #ff5e62);
+                color: white;
+                border: none;
+                padding: 12px 24px;
+                font-family: Gabriola;
+                border-radius: 30px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background 0.3s ease;
+                margin-bottom: 10px;
+            }
+
+                .recipe button:hover {
+                    background: linear-gradient(to right, #e95b3e, #e03c3c);
+                }
+
+        .full-recipe {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            color: #444;
+            font-size: 14px;
+            line-height: 1.6;
+            width: 100%;
+            opacity: 0;
+        }
+
+            .full-recipe.open {
+                display: block;
+                
+                max-height: 1700px;
+                opacity: 1;
+                margin-top: 10px;
+            }
+
+            .full-recipe ul {
+                padding-left: 20px;
+                color: seagreen;
+            }
+
+            .full-recipe ol {
+                padding-left: 20px;
+                color: darkblue;
+            }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <p> Breakfast</p> 
+    <div class="container">
+        <div class="recipe" onclick="toggleCard(this)">
+			<img src="/images/avocado toast.png" class="image" />
+            <div class="content">
+            <h3>🥑 Avocado Toast </h3>
+            <p>
+                A healthy and energizing breakfast made with crispy toast topped with mashed avocado, seasoned with lemon juice, salt, and pepper. Add a poached or fried egg on top for extra protein.
+            </p>
+            <button onclick="toggleRecipe(event,this)">Recipe</button>
+            <div class="full-recipe">
+                <strong>Ingredients:</strong><br>
+                <ul>
+                    <li>2 slices of whole grain bread</li>
+                    <li>1 ripe avocado</li>
+                    <li>1 tsp lemon juice</li>
+                    <li>Salt and black pepper to taste</li>
+                    <li>Optional: poached egg, cherry tomatoes, chili flakes</li>
+         
+                </ul>
+                <strong>Instructions:</strong>
+                <ol>
+                    <li>Toast the bread until golden brown.</li>
+                    <li>In a bowl, mash the avocado with lemon juice, salt, and pepper.</li>
+                    <li>Spread the avocado mash on the toast.</li>
+                    <li>Top with extras like an egg or tomatoes if desired.</li>
+      
+                </ol>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="recipe" onclick="toggleCard(this)">
+			<img src="/images/banana-pancakes-13.jpg" class="image" />
+            <div class="content">
+            <h3>🥞 Banana Pancakes</h3>
+            <p>Fluffy, naturally sweet pancakes made with ripe bananas. A delicious and easy breakfast favorite, perfect with syrup or nut butter.</p>
+            <button onclick="toggleRecipe(event,this)">Recipe</button>
+            <div class="full-recipe">
+                <strong>Ingredients:</strong><br>
+                <ul>
+                    <li>1 ripe banana</li>
+                    <li>1 egg</li>
+                        <li>½ cup flour</li>
+                        <li>½ tsp baking powder</li>
+                        <li>¼ cup milk</li>
+                    <li>Pinch of salt</li>
+                    <li>Butter or oil for cooking</li>
+
+                </ul>
+                <strong>Instructions:</strong>
+                <ol>
+                    <li>Mash the banana in a bowl.</li>
+                    <li>Add egg, flour, baking powder, milk, and salt. Mix until smooth.</li>
+                    <li>Heat a pan with a little butter or oil.</li>
+                    <li>Pour small amounts of batter and cook until bubbles form, then flip and cook the other side.</li>
+                    <li>Serve with honey, syrup, or sliced fruit.</li>
+
+                </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="recipe" onclick="toggleCard(this)">
+            <img src="/images/greek-scrambled-eggs-main-6.webp" class="image" />
+            <div class="content">
+            <h3>🍳Scrambled Eggs with Vegetables</h3>
+            <p>
+                Soft scrambled eggs loaded with colorful veggies like tomatoes, spinach, and bell peppers. A quick, protein-packed breakfast.
+            </p>
+            <button onclick="toggleRecipe(event,this)">Recipe</button>
+            <div class="full-recipe">
+                <strong>Ingredients:</strong><br>
+                <ul>
+                    <li>2–3 eggs</li>
+                    <li>¼ cup chopped onion</li>
+                        <li>¼ cup chopped bell pepper</li>
+                    <li>A handful of spinach</li>
+                    <li>Salt and pepper to taste</li>
+                    <li>1 tbsp olive oil or butter</li>
+                    
+
+                </ul>
+                <strong>Instructions:</strong>
+                <ol>
+                    <li>Heat oil in a pan, sauté onion and pepper for 2–3 minutes.</li>
+                    <li>Add spinach and cook until wilted.</li>
+                    <li>Beat the eggs in a bowl and pour them into the pan.</li>
+                    <li>Stir gently until eggs are cooked to your liking.</li>
+                    <li>Season with salt and pepper.</li>
+
+                </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- תוכל להוסיף עוד כרטיסים כאן -->
+    </div>  
+    <p> Lunch</p>
+    <div class="container">
+        <div class="recipe" onclick="toggleCard(this)">
+			<img src="/images/creamy garlic pasta.webp" class="image" />
+            <div class="content">
+            <h3>🍝 Creamy Garlic Pasta</h3>
+            <p>A rich and comforting pasta dish with a smooth garlic-parmesan cream sauce. Perfect for a quick yet indulgent dinner.</p>
+                <button onclick="toggleRecipe(event, this)">Recipe</button>
+            <div class="full-recipe">
+                <strong>Ingredients:</strong><br>
+                <ul>
+                    <li>250g spaghetti</li>
+                    <li>3 tbsp butter</li>
+                    <li>4 cloves garlic (minced)</li>
+                    <li>1 cup heavy cream</li>
+                        <li>½ cup grated Parmesan cheese</li>
+                    <li>Salt & pepper to taste</li>
+                    <li>Chopped parsley for garnish</li>
+                </ul>
+                <strong>Instructions:</strong>
+                <ol>
+                    <li>Cook spaghetti in salted water until al dente.</li>
+                    <li>Melt butter in a pan and sauté garlic.</li>
+                    <li>Add cream and bring to a gentle simmer.</li>
+                    <li>Stir in Parmesan until creamy.</li>
+                    <li>Toss pasta with sauce. Season and garnish with parsley.</li>
+                </ol>
+            
+                </div>
+            </div>
+        </div>
+
+        <div class="recipe" onclick="toggleCard(this)">
+			<img src="/images/roasted chicken with vegetables.jpg" class="image" />
+            <div class="content">
+                <h3>🍗Roasted Chicken with Vegetables</h3>
+                <p>A simple and delicious roasted chicken dish served with a variety of vegetables. Perfect for a hearty lunch.</p>
+                <button onclick="toggleRecipe(event, this)">Recipe</button>
+            <div class="full-recipe">
+                    <strong>Ingredients:</strong><br>
+                    <ul>
+                        <li>4 chicken pieces (breasts, thighs, or legs)</li>
+                        <li>1 large potato, peeled and cubed</li>
+                        <li>2 carrots, peeled and sliced</li>
+                        <li>1 zucchini, sliced</li>
+                        <li>½ red bell pepper, chopped</li>
+                        <li>3 tbsp olive oil</li>
+                        <li>Salt, pepper, turmeric, paprika to taste</li>
+                    </ul>
+                    <strong>Instructions:</strong>
+                    <ol>
+                        <li>Preheat the oven to 200°C (400°F).</li>
+                        <li>Place chicken in a bowl and rub with olive oil and seasonings.</li>
+                        <li>In a baking tray, arrange the vegetables, drizzle with olive oil, and toss.</li>
+                        <li>Add the chicken on top of the vegetables and roast for 40-45 minutes until cooked through.</li>
+                        <li>Serve hot with a side salad.</li>
+                    </ol>
+            </div>
+            </div>
+        </div>
+         
+        <div class ="recipe" onclick="toggleCard(this)">
+			<img src="/images/salmon-bowl-sq-2.jpg" class="image" />
+            <div class="content">
+                <h3> 🍣Salmon Bowl</h3>
+                <p>
+                    A nourishing bowl filled with grilled salmon, steamed rice, avocado, cucumber, and a tangy soy sauce dressing. It's a light yet satisfying dish perfect for a nutritious lunch.
+
+                </p>
+                <button onclick="toggleRecipe(event, this)">Recipe</button>
+            <div class="full-recipe">
+                    <strong>Ingredients:</strong><br>
+                    <ul>
+                        <li>1 piece of fresh salmon fillet</li>
+                        <li>1 cup of cooked rice (white, brown, or sushi rice)</li>
+                        <li>½ avocado, sliced</li>
+                        <li>
+                            ½ cucumber, sliced thinly
+
+                        </li>
+                        <li>1 tablespoon soy sauce</li>
+                        <li>1 teaspoon sesame oil</li>
+                        <li>1 teaspoon rice vinegar</li>
+                        <li>1 teaspoon sesame seeds</li>
+                        <li>Pickled ginger (optional)</li>
+                        <li>A pinch of chili flakes or sriracha (optional)</li>
+                    </ul>
+                    <strong>Instructions:</strong>
+                    <ol>
+                        <li>Season the salmon with salt and pepper, then cook it in a pan with a little olive oil for about 4-5 minutes per side until it's cooked through and flaky.</li>
+                        <li>While the salmon is cooking, prepare your rice according to the package instructions. Once done, fluff it with a fork.</li>
+                        <li>Start by adding the rice to the bottom of a bowl. Slice the cooked salmon and place it on top of the rice. Add slices of avocado and cucumber around the salmon.</li>
+                        <li>In a small bowl, mix together the soy sauce, sesame oil, rice vinegar, and sesame seeds. Drizzle this sauce over the salmon and rice.</li>
+                        <li>Add pickled ginger for extra flavor and some chili flakes or sriracha if you like a bit of heat.</li>
+                    </ol>
+            </div>
+            </div>
+        </div>
+
+        <!-- תוכל להוסיף עוד כרטיסים כאן -->
+    </div>
+    <p> Dessert </p>
+    <div class="container">
+        <div class="recipe" onclick="toggleCard(this)">
+			 <img src="/images/chocolate lava cake.jpg"class="image" />
+            <div class="content">
+                <h3>🎂 Chocolate Lava Cake </h3>
+                <p>
+                    A rich, individual-sized chocolate cake with a gooey molten center that oozes out when cut into.
+                </p>
+                <button onclick="toggleRecipe(event,this)">Recipe</button>
+                <div class="full-recipe">
+                    <strong>Ingredients:</strong><br>
+                    <ul>
+                        <li>½ cup butter</li>
+                        <li>4 oz dark chocolate</li>
+                        <li>2 eggs</li>
+                        <li>
+                            2 egg yolks
+
+                        </li>
+                        <li>
+                            ¼ cup sugar
+
+                        </li>
+                        <li>
+                            2 tbsp flour
+                        </li>
+
+                    </ul>
+                    <strong>Instructions:</strong>
+                    <ol>
+                        <li>Preheat oven to 425°F (220°C). Grease ramekins.</li>
+                        <li>Melt chocolate and butter together.</li>
+                        <li>Whisk eggs, yolks, and sugar until thick.</li>
+                        <li>Combine with chocolate and fold in flour.</li>
+                        <li>Pour into ramekins and bake for 12 minutes.</li>
+                        <li>Serve warm with ice cream.</li>
+
+                    </ol>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="recipe" onclick="toggleCard(this)">
+			<img src="/images/strawberry-cheesecake-parfait.jpg" class="image" />
+            <div class="content">
+                <h3>🍓Strawberry Cheesecake Parfait</h3>
+                <p> Layers of creamy cheesecake filling, fresh strawberries, and crunchy graham cracker crumbs – no baking required!</p>
+                <button onclick="toggleRecipe(event,this)">Recipe</button>
+                <div class="full-recipe">
+                    <strong>Ingredients:</strong><br>
+                    <ul>
+                        <li>1 cup cream cheese</li>
+                        <li>½ cup whipped cream</li>
+                        <li>
+                            2 tbsp sugar
+
+                        </li>
+                        <li>½ tsp vanilla extract</li>
+                        <li>1 cup diced strawberries</li>
+                        <li>½ cup crushed graham crackers</li>
+                  
+
+                    </ul>
+                    <strong>Instructions:</strong>
+                    <ol>
+                        <li>Mix cream cheese, sugar, and vanilla until smooth.</li>
+                        <li>Fold in whipped cream.</li>
+                        <li>Layer in glasses: crumbs, cream, strawberries.</li>
+                        <li>Chill and serve cold.</li>
+                        
+
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="recipe" onclick="toggleCard(this)">
+			<img src="/images/banana icecream.jpg" class="image" />
+            <div class="content">
+                <h3>🍨Banana Ice Cream</h3>
+                <p> A healthy, creamy dessert made from just frozen bananas – vegan, dairy-free, and delicious</p>
+                   
+                <button onclick="toggleRecipe(event,this)">Recipe</button>
+                <div class="full-recipe">
+                    <strong>Ingredients:</strong><br>
+                    <ul>
+                        <li>3 ripe bananas (sliced and frozen)</li>
+                        
+
+                    </ul>
+                    <strong>Instructions:</strong>
+                    <ol>
+                        <li>
+                            Blend frozen banana slices in a food processor.
+
+                        </li>
+                        <li>Scrape down sides and keep blending until smooth.</li>
+                        <li>Serve immediately as soft-serve or freeze for a firmer texture.</li>
+                        
+
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- תוכל להוסיף עוד כרטיסים כאן -->
+    </div>
+
+    <script>
+                                 let currentlyOpenCard = null;
+
+        function toggleCard(card) {
+          // אם לוחצים על אותו כרטיס – סגור אותו
+          if (currentlyOpenCard === card) {
+            card.classList.remove('revealed');  // סגור את כרטיס זה
+            closeRecipeInCard(card);  // סגור את המתכון של הכרטיס הזה
+            showImageInCard(card);  // הצג את התמונה של הכרטיס הזה
+            currentlyOpenCard = null;  // לא מקשר לכרטיס פתוח
+          } else {
+            // סגור את הכרטיס הפתוח הנוכחי
+            if (currentlyOpenCard) {
+              currentlyOpenCard.classList.remove('revealed');  // סגור את הכרטיס הקודם
+              closeRecipeInCard(currentlyOpenCard);  // סגור את המתכון של הכרטיס הקודם
+              showImageInCard(currentlyOpenCard);  // הצג את התמונה של הכרטיס הקודם
+            }
+
+            // פתח את הכרטיס החדש
+            card.classList.add('revealed');  // פתח את הכרטיס החדש
+            hideImageInCard(card);  // הסתר את התמונה בכרטיס החדש
+            currentlyOpenCard = card;  // שמור את הכרטיס הפתוח
+          }
+        }
+
+        function toggleRecipe(event, button) {
+          event.stopPropagation(); // מניעת סגירה של הכרטיס כאשר לוחצים על כפתור המתכון
+          const recipe = button.nextElementSibling;  // המתכון נמצא אחרי הכפתור
+          const isOpen = recipe.classList.contains('open');
+
+          // סגור את כל המתכונים בכל הכרטיסים
+          document.querySelectorAll('.full-recipe').forEach(r => r.classList.remove('open'));
+          document.querySelectorAll('.recipe button').forEach(b => b.textContent = 'Recipe');
+
+          // אם המתכון לא היה פתוח – פתח אותו
+          if (!isOpen) {
+            recipe.classList.add('open');
+            button.textContent = 'Close';
+          }
+        }
+
+        function closeRecipeInCard(card) {
+          const recipe = card.querySelector('.full-recipe');
+          const button = card.querySelector('button');
+          if (recipe) recipe.classList.remove('open');
+          if (button) button.textContent = 'Recipe';
+        }
+
+        function hideImageInCard(card) {
+          const image = card.querySelector('.image');
+          if (image) {
+            image.classList.add('hidden');  // הוסף קלאס להסתיר את התמונה
+          }
+        }
+
+        function showImageInCard(card) {
+          const image = card.querySelector('.image');
+          if (image) {
+            image.classList.remove('hidden');  // הסר את הקלאס להציג את התמונה
+          }
+        }
+    </script>
+
+</body>
+<style>
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+        .gallery img {
+            max-width: 150px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+            .gallery img:hover {
+                transform: scale(1.05);
+            }
+</style>
+
+
+<style>
+    .lightbox-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .lightbox-overlay img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+</style>
+    </div>
+}

@@ -1,0 +1,122 @@
+﻿@page
+@model FunFactsModel
+@{
+    ViewData["Title"] = "FunFacts";
+}
+@section FullWidthContent {
+    <div class="container" style="background: rgba(255, 255, 255, 0.5); /* רקע שקוף עם צבע בהיר */
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+        max-width: 700px;
+        width: 90%;
+        border-radius: 23px;
+text-align: center;
+        ">
+       
+<style> 
+    h1 {
+        font-family: Forte;
+        color: black;
+    }
+
+    p {
+        font-family: Gabriola;
+        color: black;
+        font-size: 29px;
+    }
+
+    body {
+        background: linear-gradient(to right, #f5f5f5, #dcdcdc);
+    }
+
+   
+</style>
+<h1>Fun Facts Of The Day</h1>
+<p> Did you know that </p>
+
+<div class="fun-facts">
+    <p id="fun-fact"></p>
+</div>
+
+<script>const funFacts = [
+                "The World’s Largest Restaurant Is in Syria And Is Called -Bawabet Dimashq-",
+            "'Restaurant' Is Actually A French Term",
+            "Ancient Civilizations Had Restaurants",
+            "Carrots Were Originally Purple",
+            "Avocados Are Fruits, Not Vegetables"
+    ];
+
+
+    let factIndex = 0;
+    const factElement = document.getElementById('fun-fact');
+
+    function showFunFact(index) {
+        factElement.textContent = funFacts[index];
+ 
+        
+    }
+
+    setInterval(() => {
+        factIndex = (factIndex + 1) % funFacts.length;
+        showFunFact(factIndex);
+    }, 5000);
+
+    showFunFact(factIndex);</script>
+
+<style>
+    .fun-facts {
+        text-align: center;
+        margin: 20px auto;
+        max-width: 600px;
+    }
+
+        .fun-facts h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .fun-facts p {
+            font-size: 1.5em;
+            color: black;
+            background-color:darkgray;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            
+        }
+
+    .btn-main {
+        font-family: Gabriola;
+        background: linear-gradient(135deg, #4CAF50, #6e7bff); /* שינוי כיוון הגרדיאנט בעת ריחוף */
+        color: white; /* צבע טקסט לבן */
+        font-size: 24px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        padding: 12px 30px;
+        border-radius: 30px; /* פינות מעוגלות */
+        transition: transform 0.3s ease-in-out, background 0.3s ease, color 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* צל קל */
+    }
+
+        .btn-main:hover {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, #D16BA5, #6D75E2); /* גרדיאנט מ-ורוד לסגול */
+           
+            color: white; /* צבע טקסט נשאר לבן */
+        }
+
+        .btn-main:focus {
+            outline: none; /* להוציא את הקו המיותר כשיש פוקוס */
+        }
+
+    </style>
+    <br /> 
+
+<button onclick="window.location.href='/Content/Index'" class="btn-main">Click To Homepage</button>
+</div>
+}

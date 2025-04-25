@@ -1,0 +1,72 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Main";
+}
+
+@section FullWidthContent {
+    <div class="hero-section" style="background: rgba(255, 255, 255, 0.5);
+                                     backdrop-filter: blur(7px);
+                                     width: 100vw;
+                                     height: 300px;
+                                     display: flex;
+                                     flex-direction: column;
+                                     justify-content: center;
+                                     align-items: center;
+                                     margin-top: 30px;
+                                     padding: 20px;
+                                     text-align: center;">
+       
+        <style>
+            body {
+                background-image: url('/images/background.webp');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                margin: 0;
+                padding: 0;
+            }
+            .hero-section h1 {
+                font-family: Forte;
+                color: black;
+            }
+
+            .hero-section p {
+                font-family: Gabriola;
+                color: black;
+                font-size: 26px;
+            }
+
+            .btn-main {
+                font-family: Gabriola;
+                background: linear-gradient(135deg, #D16BA5, #6D75E2); /* גרדיאנט מ-ורוד לסגול */
+                color: white; /* צבע טקסט לבן */
+                font-size: 24px;
+                font-weight: bold;
+                border: none;
+                cursor: pointer;
+                position: relative;
+                padding: 12px 30px;
+                border-radius: 30px; /* פינות מעוגלות */
+                transition: transform 0.3s ease-in-out, background 0.3s ease, color 0.3s ease;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* צל קל */
+            }
+
+                .btn-main:hover {
+                    transform: scale(1.1);
+                    background: linear-gradient(135deg, #4CAF50, #6e7bff); /* שינוי כיוון הגרדיאנט בעת ריחוף */
+                    color: white; /* צבע טקסט נשאר לבן */
+                }
+
+                .btn-main:focus {
+                    outline: none; /* להוציא את הקו המיותר כשיש פוקוס */
+                }
+        </style>
+        <h1>Welcome to ArroundMe</h1>
+        <p>Looking for the best and nearest restaurants or the best food recipes, this site is for you!</p>
+        <br />
+        <button id="fun-facts" onclick="location.href='Content/FunFacts'" class="btn-main">Let's get started</button>
+    </div>
+}
+
+

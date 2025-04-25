@@ -1,0 +1,67 @@
+﻿@page
+@model first.Pages.Users.IndexModel
+@using System.Data
+@{
+	ViewData["Title"] = "UsersTable";
+}
+<h1>UsersTable</h1>
+<div class="input-group mb-3">
+    <form method="post" asp-page-handler="Filter" style="width:40%">
+        <div class="input-group mb-3">
+            <input asp-for="filter" type="text" class="form-control" placeholder="Enter text to filter">
+            <button type="submit" class="btn btn-primary me-3" type!="button" id="Filter_btn">Filter</button>
+        </div>
+    </form>
+    <form method="post" asp-page-handler="Sort" style="width:40%">
+        <div class="input-group mb-3">
+            <select asp-for="column" class="form-select" style="width:50%">
+                <option value="Id" selected>Id</option>
+                <option value="Username">Username</option>
+                <option value="Email">Email</option>
+                <option value="Firstname">Firstname</option>
+                <option value="Lastname">Lastname</option>
+                <option value="Phone">Phone</option>
+                <option value="City">City</option>
+                <option value="Gender">Gender</option>
+                <option value="DateOfBirth">DateOfBirth</option>
+            </select>
+            <select asp-for="Order" class="form-select" style="width:25%">
+                <option value="ASC">Ascending</option>
+                <option value="DESC">Desending</option>
+            </select>
+            <button class="btn btn-success me-3" type="Submit" id="Sort_btn">Sort</button>
+        </div>
+    </form>
+    <form method="post" asp-page-handler="Delete" style="width:20%">
+        <div class="input-group mb-3">
+            <input asp-for="Id" class="form-control" placeholder="Id to delete">
+            <button class="btn btn-danger" type="Submit" id="Delete_btn">Delete</button>
+        </div>
+    </form>
+</div>
+
+<table class="table">
+	<thead>
+		<tr>
+			@foreach (DataColumn column in Model.dt.Columns)
+			{
+				<th>@column.ColumnName</th>
+			}
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (DataRow row in Model.dt.Rows)
+		{
+			<tr>
+				@foreach (DataColumn column in Model.dt.Columns)
+				{
+					<td>@row[column]</td>
+				}
+				<td>
+                    <a asp-page="../Content/Update" asp-route-param="@row["Id"]">update</a>
+
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

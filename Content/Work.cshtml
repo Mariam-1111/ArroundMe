@@ -1,0 +1,305 @@
+﻿
+@page
+@model QuizModel
+@{
+    ViewData["Title"] = "Job";
+}
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Job Gallery</title>
+    <style>
+        body {
+            font-family:Gabriola;
+            text-align: center;
+            margin: 0;
+            padding: 0 20px;
+            background: linear-gradient(to right, #cfdce8, #f0ebe3);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-top: 20px;
+            font-family: Forte;
+            color: black;
+            text-align: center;
+        }
+
+        .hero-section {
+            text-align: center;
+            background-color: rgba(169, 169, 169, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 20px;
+            width: 100%;
+            border-bottom: 2px solid #333;
+            border-radius: 20px;
+            font-size: 24px;
+        }
+        .container{
+            background: rgba(255, 255, 255, 0.7); /* רקע לבן שקוף */
+            justify-content: center; /* מרכז את הכרטיסיות */
+            border-radius: 23px;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 5px;
+            font-family: Gabriola;
+        }
+
+        .gallery-title {
+            font-family: Gabriola;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 40px 0 10px;
+            color: #333;
+        }
+
+        .gallery-container {
+            margin-bottom: 40px;
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            
+        }
+
+        .arrow-btn {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            z-index: 10;
+            margin: 0 15px;
+        }
+
+            .arrow-btn:hover {
+                background-color: #555;
+            }
+
+        .gallery {
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .card-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.6s ease;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .job-card {
+            width: 280px;
+            flex-shrink: 0;
+            margin: 0 15px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            transition: transform 0.6s ease, height 0.5s ease;
+            transform: scale(0.9);
+            opacity: 0.6;
+        }
+
+            .job-card img {
+                width: 100%;
+                height: 180px;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+
+        .job-title {
+            font-size: 1.8em;
+            margin-top: 10px;
+        }
+
+        a.info-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: linear-gradient(to right, #ff9966, #ff5e62);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-top: 10px;
+        }
+
+            .info-btn:hover {
+                background: linear-gradient(to right, #e95b3e, #e03c3c);
+
+            }
+
+        .description {
+            display: block;
+            margin-top: 10px;
+            font-size: 17px;
+            padding: 10px;
+            border-radius: 7px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+        }
+
+        .job-card.expanded .description {
+            display: block;
+        }
+
+        .job-card.active {
+            transform: scale(1.1);
+            opacity: 1;
+            z-index: 2;
+        }
+
+       
+
+    </style>
+</head>
+<body>
+    
+    <h1>Restaurants' Job Advertisements</h1>
+    <div class="hero-section">
+        
+    <p>
+            <select id="countrySelect"  onchange="loadJobGalleries(this.value)">
+            
+            <option value="israel" selected>Israel</option>
+            <option value="usa">USA</option>
+            <option value="italy">Italy</option>
+        </select>
+    </p>
+    </div>
+    <div id="jobGalleriesContainer"></div>
+
+    <script>
+            
+        const allJobs = {
+            israel: [
+                { title: "Joya Restaurant Chain", description: "Waiters/Waitresses and Hostesses for a Leading Restaurant Chain! ₪60–₪100 per hour", link: "https://www.drushim.co.il/job/33234936/d09254cf/" },
+                { title: "KFC", description: "Now Hiring Male and Female Staff for KFC Restaurant Chain – Rishon LeZion Branch", link: "https://www.drushim.co.il/job/33243220/064074c0/" },
+                { title: "WINGS ",  description: "We are looking for the next Shift Supervisor - Restaurant Counter Staff", link: "https://www.drushim.co.il/job/33226538/0599ce94/" }
+            ],
+            usa: [
+                { title: "Burger Heaven", description: "DevOps position open at NY location", link: "https://example.com/burger-job" },
+                { title: "Pasta Palace", description: "iOS developer for in-house app", link: "https://example.com/pasta-job" },
+                { title: "Sushi Spot",  description: "Product manager to lead innovation", link: "https://example.com/sushi-job" }
+            ],
+            italy: [
+                { title: "Pizza Roma",  description: "Backend developer needed for kitchen systems", link: "https://example.com/pizza-job" },
+                { title: "Trattoria Bella",  description: "QA engineer for app testing", link: "https://example.com/trattoria-job" },
+                { title: "Gelato Dream", description: "Support role for online orders", link: "https://example.com/gelato-job" }
+            ]
+        };
+
+        function loadJobGalleries(country) {
+            const container = document.getElementById("jobGalleriesContainer");
+            container.innerHTML = "";
+
+            if (!allJobs[country]) return;
+
+            const title = document.createElement("div");
+            title.className = "gallery-title";
+            title.textContent = "Top Job Ads";
+
+            const galleryContainer = document.createElement("div");
+            galleryContainer.className = "gallery-container";
+
+            const prevBtn = document.createElement("button");
+            prevBtn.className = "arrow-btn";
+            prevBtn.textContent = "←";
+            prevBtn.onclick = () => showJobGallery(country + "-jobs", -1);
+
+            const nextBtn = document.createElement("button");
+            nextBtn.className = "arrow-btn";
+            nextBtn.textContent = "→";
+            nextBtn.onclick = () => showJobGallery(country + "-jobs", 1);
+
+            const gallery = document.createElement("div");
+            gallery.className = "gallery";
+
+            const wrapper = document.createElement("div");
+            wrapper.className = "card-wrapper";
+            wrapper.id = country + "-jobs";
+            wrapper.dataset.index = 0;
+            wrapper.dataset.country = country;
+
+            gallery.appendChild(wrapper);
+            galleryContainer.appendChild(prevBtn);
+            galleryContainer.appendChild(gallery);
+            galleryContainer.appendChild(nextBtn);
+
+            container.appendChild(title);
+            container.appendChild(galleryContainer);
+
+            renderJobGallery(wrapper.id);
+        }
+
+        function renderJobGallery(id) {
+            const wrapper = document.getElementById(id);
+            const index = parseInt(wrapper.dataset.index);
+            const country = wrapper.dataset.country;
+            const list = allJobs[country];
+
+            wrapper.innerHTML = "";
+
+            for (let i = -1; i <= 1; i++) {
+                const idx = (index + i + list.length) % list.length;
+                const job = list[idx];
+
+                const card = document.createElement("div");
+                card.className = "job-card";
+                if (i === 0) card.classList.add("active");
+
+               
+
+                const title = document.createElement("div");
+                title.className = "job-title";
+                title.textContent = job.title;
+
+                const desc = document.createElement("div");
+                desc.className = "description";
+                desc.textContent = job.description;
+
+                        const btn = document.createElement("a");
+        btn.className = "info-btn";
+        btn.textContent = "More Info";
+        btn.href = job.link;
+        btn.target = "_blank";
+
+                
+                card.appendChild(title);
+                card.appendChild(desc);
+                card.appendChild(btn);
+                wrapper.appendChild(card);
+            }
+        }
+
+        function showJobGallery(id, direction) {
+            const wrapper = document.getElementById(id);
+            const len = allJobs[wrapper.dataset.country].length;
+            let index = parseInt(wrapper.dataset.index);
+            index = (index + direction + len) % len;
+            wrapper.dataset.index = index;
+            renderJobGallery(id);
+        }
+                    document.addEventListener("DOMContentLoaded", function() {
+            loadJobGalleries("israel");
+        });
+                </script>
+</body>

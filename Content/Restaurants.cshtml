@@ -1,0 +1,670 @@
+﻿@page
+@model AboutModel
+@{
+    ViewData["Title"] = "Restaurants";
+}
+
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       
+    <style>
+        body {
+            background: linear-gradient(to right, #e8f0ff, #fdfaf6);
+            margin: 0;
+            padding: 0;
+            font-family: Gabriola;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+
+        h1 {
+            font-size: 2.5em;
+            margin-top: 20px;
+            font-family: Forte;
+            color: black;
+            text-align: center;
+        }
+
+        .hero-section {
+            text-align: center;
+            background-color: rgba(169, 169, 169, 0.2);
+            padding: 20px;
+          
+            width: 100%;
+            border-bottom: 2px solid #333;
+            border-radius: 20px;
+            font-size: 24px;
+
+        }
+        .container{
+            background: rgba(255, 255, 255, 0.7); /* רקע לבן שקוף */
+            justify-content: center; /* מרכז את הכרטיסיות */
+            border-radius: 23px;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 5px;
+        }
+
+        
+
+        .gallery-container {
+            margin-bottom: 40px;
+            
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+           
+        }
+
+        .arrow-btn {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            z-index: 10;
+            margin: 0 15px;
+        }
+
+            .arrow-btn:hover {
+                background-color: #555;
+            }
+
+        .gallery {
+            overflow: hidden;
+            width: 100%;
+            height:100%
+        }
+
+        .gallery-title {
+            font-family: Gabriola; /* בחר פונט שתרצה */
+            font-size: 24px; /* גודל הפונט */
+            font-weight: bold; /* בחירה של האם הפונט יהיה מודגש */
+            margin-bottom: 15px; /* רווח בין הכותרת לשאר הגלריה */
+           
+        }
+
+        .card-wrapper {
+            display: flex;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.6s ease;
+        }
+
+        .restaurant-card {
+            width: 280px;
+            flex-shrink: 0;
+            margin: 0 15px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            transition: transform 0.6s ease, height 0.5s ease;
+            transform: scale(0.9);
+            opacity: 0.6;
+        }
+
+            .restaurant-card img {
+                width: 100%;
+                height: 180px;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+
+        .restaurant-name {
+            font-size: 1.8em;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .info-btn {
+            background: linear-gradient(to right, #ff9966, #ff5e62);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .restaurant-rating {
+            font-size: 1em;
+            
+            margin-top: 5px;
+            font-weight: bold;
+        }
+            .info-btn:hover {
+                background: linear-gradient(to right, #e95b3e, #e03c3c);
+            }
+
+        .description {
+            display: none;
+            margin-top: 10px;
+            font-size: 17px;
+            padding: 10px;
+            border-radius: 7px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+        }
+
+        .restaurant-card.expanded .description {
+            display: block;
+        }
+
+        .restaurant-card.active {
+            transform: scale(1.1);
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .heart {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            color: #ccc;
+        }
+
+            .heart.filled {
+                color: red;
+            }
+
+       
+
+        .modal {
+            position: fixed; /* המודל יוצג מעל כל התוכן */
+          
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* רקע חצי שקוף */
+            display: none; /* המודל מוסתר בהתחלה */
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* הצגת המודל לפני כל אלמנט אחר */
+        }
+
+        .modal-content {
+            background-color: white; /* רקע לבן למודל */
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px; /* רוחב יותר קטן */
+            text-align: center; /* מרכז את הטקסט */
+        }
+
+            .modal-content h2 {
+                font-size: 18px; /* גודל טקסט קטן יותר */
+                margin-bottom: 10px;
+            }
+
+            .modal-content button {
+                padding: 10px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+                .modal-content button:hover {
+                    background-color: #45a049;
+                }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+            .close:hover,
+            .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+        
+    </style>
+</head>
+
+<body>
+    <div id="authModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>You must sign in or create an account to add to favorites.</h2>
+            
+        </div>
+    </div>
+    <h1>Pick Your Restaurant</h1>
+    
+    <div class="hero-section">
+        <p>
+            Restaurants in:
+            <select  id="citySelect" onchange="loadAllGalleries(this.value)">
+                <option value="telaviv" selected>Tel Aviv</option>
+               
+                <option value="jerusalem">Jerusalem</option>
+                <option value="haifa">Haifa</option>
+                <option value="beerSheva">BeerSheva</option>
+                <option value="eilat">Eilat</option>
+            </select>
+        </p>
+    </div>
+
+    <div id="galleriesContainer"></div>
+
+    <script>
+        const allRestaurants = {
+            telaviv: {
+                top3: [
+                    { name: "Katit", image: "/images/Katit.jpg",rating: "⭐⭐⭐⭐☆", description: "Gourmet chef restaurant with modern menu." },
+                    { name: "Shila", image: "/images/shila.jpg",rating: "⭐⭐⭐⭐☆", description: "Lively bar-restaurant with seafood." },
+                    { name: "Taizu", image: "/images/taizu.jpg",rating: "⭐⭐⭐⭐☆", description: "Asian fusion with stunning design." }
+                ],
+                meat: [
+                    { name: "M25", image: "/images/M25.jpeg",rating: "⭐⭐⭐⭐☆", description: "Grilled meats in Carmel Market." },
+                    { name: "Hudson", image: "/images/hudson.jpeg",rating: "⭐⭐⭐⭐☆", description: "Upscale meat experience." },
+                            { name: "Butchery de Bariloche", image: "/images/meattlv.jpeg",rating: "⭐⭐⭐⭐☆", description: "A high-end steakhouse in Bariloche, Argentina, known for its premium cuts of meat and cozy atmosphere. " }
+                ],
+                cafes: [
+                    { name: "Cafe Lugano", image: "/images/lugano.jpg",rating: "⭐⭐⭐⭐☆", description: "Vegan friendly & creative dishes." },
+                    { name: "Nahat", image: "/images/cafe 1.jpg",rating: "⭐⭐⭐⭐☆", description: "Local roasting and chill." },
+                    { name: "Anita", image: "/images/cafe 1.jpg",rating: "⭐⭐⭐⭐☆", description: "Ice cream and café vibes." }
+                ],
+                fish: [
+                    { name: "Mul Yam", image: "/images/fish.webp",rating: "⭐⭐⭐⭐☆", description: "Seafood excellence by the sea." },
+                    { name: "Manta Ray", image: "/images/fish.webp",rating: "⭐⭐⭐⭐☆", description: "Beachfront seafood & sunsets." },
+                    { name: "Ouzeria", image: "/images/fish.webp",rating: "⭐⭐⭐⭐☆", description: "Mediterranean seafood magic." }
+                ]
+            },
+            jerusalem: {
+                top3: [
+                     { name: "Machneyuda", image: "/images/Machneyuda.webp",rating: "⭐⭐⭐⭐☆", description: "Lively Jerusalem culinary experience." },
+            { name: "Azura", image: "/images/azura.jpg",rating: "⭐⭐⭐⭐☆", description: "Authentic Middle Eastern dishes." },
+            { name: "Cafe Kadosh", image: "/images/kadosh.jpg",rating: "⭐⭐⭐⭐☆", description: "Famous bakery and family café." }
+
+                ],
+                meat: [
+                            { name: "skyline", image: "/images/skyline.jpg",rating: "⭐⭐⭐⭐☆", description: "A chic rooftop restaurant offering stunning views and a fusion of Mediterranean and international flavors." },
+                    { name: "Hudson", image: "/images/hudson.jpg",rating: "⭐⭐⭐⭐☆", description: "Upscale meat experience." },
+                    { name: " Harvey's Smokehouse", image: "/images/butchery_tlv.jpg",rating: "⭐⭐⭐⭐☆", description: "Modern meat bar with flair." }
+                ],
+                cafes: [
+                    { name: "Cafe Xoho", image: "/images/xoho.jpg",rating: "⭐⭐⭐⭐☆", description: "Vegan friendly & creative dishes." },
+                    { name: "Nahat", image: "/images/nahat.jpg",rating: "⭐⭐⭐⭐☆", description: "Local roasting and chill." },
+                    { name: "Anita", image: "/images/anita.jpg",rating: "⭐⭐⭐⭐☆", description: "Ice cream and café vibes." }
+                ],
+                fish: [
+                    { name: "Mul Yam", image: "/images/mulyam.jpg",rating: "⭐⭐⭐⭐☆", description: "Seafood excellence by the sea." },
+                    { name: "Manta Ray", image: "/images/mantaray.jpg",rating: "⭐⭐⭐⭐☆", description: "Beachfront seafood & sunsets." },
+                    { name: "Ouzeria", image: "/images/ouzeria.jpg",rating: "⭐⭐⭐⭐☆", description: "Mediterranean seafood magic." }
+                ]
+            },
+            haifa: {
+                top3: [
+                     { name: "Shtroudl", image: "/images/shtroudl.jpg",rating: "⭐⭐⭐⭐☆", description: "Fresh pastries and cozy café." },
+            { name: "Douzan", image: "/images/douzan.png",rating: "⭐⭐⭐⭐☆", description: "Arabic kitchen with homey vibe." },
+            { name: "LUX", image: "/images/lux.jpg",rating: "⭐⭐⭐⭐☆", description: "Handmade Arabic dishes, great ingredients." }
+
+                ],
+                meat: [
+                    { name: "M25", image: "/images/m25.jpg",rating: "⭐⭐⭐⭐☆", description: "Grilled meats in Carmel Market." },
+                    { name: "Hudson", image: "/images/hudson.jpg",rating: "⭐⭐⭐⭐☆", description: "Upscale meat experience." },
+                    { name: "Butchery TLV", image: "/images/butchery_tlv.jpg",rating: "⭐⭐⭐⭐☆", description: "Modern meat bar with flair." }
+                ],
+                cafes: [
+                    { name: "Cafe Xoho", image: "/images/xoho.jpg",rating: "⭐⭐⭐⭐☆", description: "Vegan friendly & creative dishes." },
+                    { name: "Nahat", image: "/images/nahat.jpg",rating: "⭐⭐⭐⭐☆", description: "Local roasting and chill." },
+                    { name: "Anita", image: "/images/anita.jpg",rating: "⭐⭐⭐⭐☆", description: "Ice cream and café vibes." }
+                ],
+                fish: [
+                    { name: "Mul Yam", image: "/images/mulyam.jpg",rating: "⭐⭐⭐⭐☆", description: "Seafood excellence by the sea." },
+                    { name: "Manta Ray", image: "/images/mantaray.jpg",rating: "⭐⭐⭐⭐☆", description: "Beachfront seafood & sunsets." },
+                    { name: "Ouzeria", image: "/images/ouzeria.jpg",rating: "⭐⭐⭐⭐☆", description: "Mediterranean seafood magic." }
+                ]
+            },
+            beerSheva: {
+                top3: [
+                     { name: "Cramim", image: "/images/cramim.jpg",rating: "⭐⭐⭐⭐☆", description: "French-Med cuisine & wine." },
+            { name: "Butchery", image: "/images/butchery.jpg",rating: "⭐⭐⭐⭐☆", description: "Top kosher meat." },
+            { name: "Kampai", image: "/images/sushi.jpg",rating: "⭐⭐⭐⭐☆", description: "Asian fusion, sushi & vegan." }
+
+                ],
+                meat: [
+                    { name: "M25", image: "/images/m25.jpg",rating: "⭐⭐⭐⭐☆", description: "Grilled meats in Carmel Market." },
+                    { name: "Hudson", image: "/images/hudson.jpg",rating: "⭐⭐⭐⭐☆", description: "Upscale meat experience." },
+                    { name: "Butchery TLV", image: "/images/butchery_tlv.jpg",rating: "⭐⭐⭐⭐☆", description: "Modern meat bar with flair." }
+                ],
+                cafes: [
+                    { name: "Cafe Xoho", image: "/images/xoho.jpg",rating: "⭐⭐⭐⭐☆", description: "Vegan friendly & creative dishes." },
+                    { name: "Nahat", image: "/images/nahat.jpg",rating: "⭐⭐⭐⭐☆", description: "Local roasting and chill." },
+                    { name: "Anita", image: "/images/anita.jpg",rating: "⭐⭐⭐⭐☆", description: "Ice cream and café vibes." }
+                ],
+                fish: [
+                    { name: "Mul Yam", image: "/images/mulyam.jpg",rating: "⭐⭐⭐⭐☆", description: "Seafood excellence by the sea." },
+                    { name: "Manta Ray", image: "/images/mantaray.jpg",rating: "⭐⭐⭐⭐☆", description: "Beachfront seafood & sunsets." },
+                    { name: "Ouzeria", image: "/images/ouzeria.jpg",rating: "⭐⭐⭐⭐☆", description: "Mediterranean seafood magic." }
+                ]
+            },
+            eilat: {
+                top3: [
+                      { name: "Torta", image: "/images/torta.jpg",rating: "⭐⭐⭐⭐☆", description: "Mexican grill, fresh tortas." },
+            { name: "Omer's", image: "/images/omers.jpg",rating: "⭐⭐⭐⭐☆", description: "Gourmet sandwiches, fresh everything." },
+            { name: "Cafe Optimi", image: "/images/cafeoptimi.jpg",rating: "⭐⭐⭐⭐☆", description: "Beachside Israeli-Italian dishes." }
+
+                ],
+                meat: [
+                    { name: "M25", image: "/images/m25.jpg",rating: "⭐⭐⭐⭐☆", description: "Grilled meats in Carmel Market." },
+                    { name: "Hudson", image: "/images/hudson.jpg",rating: "⭐⭐⭐⭐☆", description: "Upscale meat experience." },
+                    { name: "Butchery TLV", image: "/images/butchery_tlv.jpg",rating: "⭐⭐⭐⭐☆", description: "Modern meat bar with flair." }
+                ],
+                cafes: [
+                    { name: "Cafe Xoho", image: "/images/xoho.jpg",rating: "⭐⭐⭐⭐☆", description: "Vegan friendly & creative dishes." },
+                    { name: "Nahat", image: "/images/nahat.jpg",rating: "⭐⭐⭐⭐☆", description: "Local roasting and chill." },
+                    { name: "Anita", image: "/images/anita.jpg",rating: "⭐⭐⭐⭐☆", description: "Ice cream and café vibes." }
+                ],
+                fish: [
+                    { name: "Mul Yam", image: "/images/mulyam.jpg",rating: "⭐⭐⭐⭐☆", description: "Seafood excellence by the sea." },
+                    { name: "Manta Ray", image: "/images/mantaray.jpg",rating: "⭐⭐⭐⭐☆", description: "Beachfront seafood & sunsets." },
+                    { name: "Ouzeria", image: "/images/ouzeria.jpg",rating: "⭐⭐⭐⭐☆", description: "Mediterranean seafood magic." }
+                ]
+            }
+            // אפשר להוסיף עוד ערים כאן...
+        };
+               
+                             function updateHeartState(heart, restName) {
+                    const isLoggedInFromServer = '@HttpContext.Session.GetString("Login")' !== '';
+            const serverFavoritesRaw = '@(HttpContext.Session.GetString("FavoriteRestaurants") ?? "[]")'.replace(/&quot;/g, '"');
+
+            if (isLoggedInFromServer) {
+                localStorage.setItem("isLoggedIn", "true");
+
+                // שיחזור מועדפים מהשרת רק אם אין מועדפים ב-localStorage
+                if (!localStorage.getItem("favoriteRestaurants")) {
+                    try {
+                        const parsedFavorites = JSON.parse(serverFavoritesRaw);
+                        localStorage.setItem("favoriteRestaurants", JSON.stringify(parsedFavorites));
+                    } catch (e) {
+                        console.error("שגיאה בטעינת מועדפים מהשרת:", e);
+                        localStorage.setItem("favoriteRestaurants", "[]");
+                    }
+                }
+
+                // אם יש מסעדה מועדפת שחיכתה להתחברות
+                const pendingFav = sessionStorage.getItem("pendingFavorite");
+                if (pendingFav) {
+                    let favs = JSON.parse(localStorage.getItem("favoriteRestaurants") || "[]");
+                    if (!favs.includes(pendingFav)) {
+                        favs.push(pendingFav);
+                        localStorage.setItem("favoriteRestaurants", JSON.stringify(favs));
+                    }
+                    sessionStorage.removeItem("pendingFavorite");
+                }
+            } else {
+                localStorage.removeItem("isLoggedIn");
+                localStorage.removeItem("favoriteRestaurants");
+
+                // לוודא שכל הלבבות יהיו לבנים
+                const heartIcons = document.querySelectorAll(".heart-icon");
+                heartIcons.forEach(heart => {
+                    heart.innerHTML = "🤍";
+                });
+            }
+
+            // עדכון מצב הלב
+            const isUserLoggedIn = isLoggedInFromServer || localStorage.getItem("isLoggedIn") === "true";
+            let favoriteRestaurants = JSON.parse(localStorage.getItem("favoriteRestaurants") || "[]");
+
+            heart.innerHTML = isUserLoggedIn && favoriteRestaurants.includes(restName) ? "❤️" : "🤍";
+        }
+
+        // עדכון המועדפים בלחיצה
+        function handleHeartClick(heart, restName) {
+            const isUserLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+            let favoriteRestaurants = JSON.parse(localStorage.getItem("favoriteRestaurants") || "[]");
+
+            if (!isUserLoggedIn) {
+                // שמור את המועדף ב-sessionStorage
+                sessionStorage.setItem("pendingFavorite", restName);
+                // שומר את כתובת הדף
+               
+            }
+
+            const indexInFav = favoriteRestaurants.indexOf(restName);
+            if (indexInFav > -1) {
+                // אם הוא כבר מועדף, נסיר אותו
+                favoriteRestaurants.splice(indexInFav, 1);
+                heart.innerHTML = "🤍";
+            } else {
+                // אם לא, נוסיף אותו
+                favoriteRestaurants.push(restName);
+                heart.innerHTML = "❤️";
+            }
+
+            // עדכון ב-LocalStorage
+            localStorage.setItem("favoriteRestaurants", JSON.stringify(favoriteRestaurants));
+        }
+        
+
+                 
+        function closeModal() {
+                document.getElementById("authModal").style.display = "none";
+            }
+                           
+        function loadAllGalleries(city) {
+            const container = document.getElementById("galleriesContainer");
+            container.innerHTML = "";
+
+            if (!allRestaurants[city]) return;
+
+            const categories = [
+                { key: "top3", title: "Top 3 Restaurants" },
+                { key: "meat", title: "Meat Restaurants" },
+                { key: "cafes", title: "Cafés" },
+                { key: "fish", title: "Fish Restaurants" }
+            ];
+                   
+
+            categories.forEach(cat => {
+                const galleryId = `${city}-${cat.key}`;
+
+                const title = document.createElement("div");
+                title.className = "gallery-title";
+                title.textContent = cat.title;
+
+                const galleryContainer = document.createElement("div");
+                galleryContainer.className = "gallery-container";
+
+                const prevBtn = document.createElement("button");
+                prevBtn.className = "arrow-btn";
+                prevBtn.textContent = "←";
+                prevBtn.onclick = () => showGallery(galleryId, -1);
+
+                const nextBtn = document.createElement("button");
+                nextBtn.className = "arrow-btn";
+                nextBtn.textContent = "→";
+                nextBtn.onclick = () => showGallery(galleryId, 1);
+
+                const gallery = document.createElement("div");
+                gallery.className = "gallery";
+
+                const wrapper = document.createElement("div");
+                wrapper.className = "card-wrapper";
+                wrapper.id = galleryId;
+
+                gallery.appendChild(wrapper);
+                galleryContainer.appendChild(prevBtn);
+                galleryContainer.appendChild(gallery);
+                galleryContainer.appendChild(nextBtn);
+
+                container.appendChild(title);
+                container.appendChild(galleryContainer);
+
+                wrapper.dataset.index = 0;
+                wrapper.dataset.city = city;
+                wrapper.dataset.category = cat.key;
+
+                renderGallery(galleryId);
+            });
+        }
+
+
+                function renderGallery(id) {
+            const wrapper = document.getElementById(id);
+            const index = parseInt(wrapper.dataset.index);
+            const city = wrapper.dataset.city;
+            const category = wrapper.dataset.category;
+
+            const list = allRestaurants[city][category];
+            wrapper.innerHTML = "";
+
+            for (let i = -1; i <= 1; i++) {
+                const idx = (index + i + list.length) % list.length;
+                const rest = list[idx];
+
+                // יצירת כרטיס מסעדה
+                const card = document.createElement("div");
+                card.className = "restaurant-card";
+                if (i === 0) card.classList.add("active");
+
+                // תמונה
+                const img = document.createElement("img");
+                img.src = rest.image;
+                img.alt = rest.name;
+
+                // שם
+                const name = document.createElement("div");
+                name.className = "restaurant-name";
+                name.textContent = rest.name;
+
+                // דירוג
+                const rating = document.createElement("div");
+                rating.className = "restaurant-rating";
+                rating.textContent = rest.rating;
+
+                // כפתור מידע נוסף
+                const btn = document.createElement("button");
+                btn.className = "info-btn";
+                btn.textContent = "More Info";
+        
+                // לב מועדפים
+                       const heart = document.createElement("span");
+        heart.className = "heart-icon";
+        updateHeartState(heart, rest.name);  // עדכון מצב הלב כשהמסעדה מוצגת
+
+        heart.style.cursor = "pointer";
+
+        // הגדרת פעולת לחיצה על הלב
+        heart.onclick = function () {
+            const isLoggedIn = localStorage.getItem("isLoggedIn") === "true"; // בדיקה בזמן אמת
+            let favoriteRestaurants = JSON.parse(localStorage.getItem("favoriteRestaurants") || "[]"); // קבלת המועדפים
+
+            if (!isLoggedIn) {
+                // אם לא מחובר, נשמור את שם המסעדה ב-sessionStorage ונציג את חלון התחברות
+                sessionStorage.setItem("pendingFavorite", rest.name);
+                
+                const modal = document.getElementById("authModal");
+                modal.style.display = "flex"; // מציג את מודל ההתחברות
+                return;
+            }
+
+            // אם המשתמש מחובר, נעדכן את מצב הלב (לבן/אדום)
+            const indexInFav = favoriteRestaurants.indexOf(rest.name);
+            if (indexInFav > -1) {
+                // אם המסעדה כבר מועדפת, נסיר אותה מהמועדפים
+                favoriteRestaurants.splice(indexInFav, 1);
+                heart.innerHTML = "🤍"; // עדכון הלב ללב לבן
+            } else {
+                // אם המסעדה לא נמצאת במועדפים, נוסיף אותה
+                favoriteRestaurants.push(rest.name);
+                heart.innerHTML = "❤️"; // עדכון הלב ללב אדום
+            }
+
+            // נשמור את המועדפים ב-LocalStorage
+            localStorage.setItem("favoriteRestaurants", JSON.stringify(favoriteRestaurants));
+
+            // עדכון מצב הלב אחרי השינוי
+            
+        };
+                window.addEventListener('load', function() {
+            const pendingFavorite = sessionStorage.getItem("pendingFavorite");
+            if (pendingFavorite) {
+                let favoriteRestaurants = JSON.parse(localStorage.getItem("favoriteRestaurants") || "[]");
+                if (!favoriteRestaurants.includes(pendingFavorite)) {
+                    favoriteRestaurants.push(pendingFavorite);
+                    localStorage.setItem("favoriteRestaurants", JSON.stringify(favoriteRestaurants));
+                }
+                sessionStorage.removeItem("pendingFavorite"); // מנקה את pendingFavorite אחרי ההתחברות
+            }
+                const allHearts = document.querySelectorAll('.heart-icon');
+        allHearts.forEach(function(heart) {
+            const restName = heart.getAttribute('data-rest-name'); // כדאי לוודא שכל לב יש לו שם מסעדה ייחודי
+            updateHeartState(heart, restName); // עדכון מצב הלב לפי המועדפים
+        });
+        });
+
+                // תיאור
+                const desc = document.createElement("div");
+                desc.className = "description";
+                desc.textContent = rest.description;
+
+                // לחיצה על More Info
+                btn.onclick = function () {
+                    const allCards = wrapper.querySelectorAll(".restaurant-card");
+                    allCards.forEach(c => {
+                        if (c !== card) {
+                            c.classList.remove("expanded");
+                            c.querySelector(".info-btn").textContent = "More Info";
+                        }
+                    });
+
+                    card.classList.toggle("expanded");
+                    btn.textContent = card.classList.contains("expanded") ? "Less Info" : "More Info";
+                };
+
+                // הרכבת הכרטיס
+                card.appendChild(img);
+                card.appendChild(name);
+                card.appendChild(rating);
+                card.appendChild(heart);
+                card.appendChild(btn);
+                card.appendChild(desc);
+
+                // הוספה לגלריה
+                wrapper.appendChild(card);
+            }
+        }
+        function showGallery(id, direction) {
+            const wrapper = document.getElementById(id);
+            const len = allRestaurants[wrapper.dataset.city][wrapper.dataset.category].length;
+            let index = parseInt(wrapper.dataset.index);
+            index = (index + direction + len) % len;
+            wrapper.dataset.index = index;
+            renderGallery(id);
+        }
+              window.addEventListener('DOMContentLoaded', () => {
+            const select = document.getElementById("citySelect");
+            loadAllGalleries(select.value);  // יטען את תל אביב כברירת מחדל
+        });
+    </script>
+</body>

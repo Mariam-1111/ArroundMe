@@ -1,0 +1,147 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+@section FullWidthContent {
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            transition: background-image 1s ease-in-out;
+        }
+
+        body {
+            opacity: 0;
+            transition: opacity 0.5s ease-in;
+        }
+
+            body.loaded {
+                opacity: 1;
+            }
+        .hero-section {
+            background-color: rgba(255, 255, 255, 0.5); /* שקיפות */
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 1000px;
+            margin: 40px auto;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-family: Gabriola;
+            text-align: center;
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background:white;
+            
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+            }
+
+            .card img {
+                width: 100px;
+                height: 100px;
+                object-fit: contain;
+                margin-bottom: 15px;
+            }
+
+            .card a {
+                text-decoration: none;
+                color: #444;
+                font-family: Gabriola;
+                font-weight: bold;
+                font-size: 24px;
+                display: inline-block;
+                margin-top: 10px;
+            }
+
+                .card a:hover {
+                    color: #007bff;
+                }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const backgrounds = [
+                '/images/bg1.png',
+                '/images/bg2.png',
+                '/images/bg3.jpg',
+                '/images/bg4.jpg'
+            ];
+            let index = 0;
+            document.body.style.transition = "background-image 1s ease-in-out";
+            function changeBackground() {
+                document.body.style.backgroundImage = `url('${backgrounds[index]}')`;
+                index = (index + 1) % backgrounds.length;
+            }
+
+            changeBackground();
+            setInterval(changeBackground, 6000);
+        });
+                 
+    </script>
+
+    <div class="hero-section">
+        <h1>ArroundMe Offers</h1>
+
+        <div class="grid-container">
+            <div class="card">
+                <a href="/Content/Restaurants">
+                    <img src="~/images/restaurant.svg" alt="Restaurants" />
+                    <div>Restaurants →</div>
+                </a>
+            </div>
+            <div class="card">
+                <a href="/Content/Recipes">
+                    <img src="~/images/cooking.svg" alt="Recipes" />
+                    <div>Recipes →</div>
+                </a>
+            </div>
+            <div class="card">
+                <a href="/Content/Work">
+                    <img src="~/images/waiter.svg" alt="Job" />
+                    <div>Job →</div>
+                </a>
+            </div>
+            <div class="card">
+                <a href="/Content/My account">
+                    <img src="~/images/ratingaccount.gif" alt="My Reviews" />
+                    <div>My Reviews →</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.body.classList.add("loaded");
+        });
+    </script>
+}

@@ -1,0 +1,11 @@
+C:\Users\Dell\Downloads\first-main\obj\Debug\net7.0\first.csproj.AssemblyReference.cache
+C:\Users\Dell\Downloads\first-main\obj\Debug\net7.0\first.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dell\Downloads\first-main\obj\Debug\net7.0\first.AssemblyInfoInputs.cache
+C:\Users\Dell\Downloads\first-main\obj\Debug\net7.0\first.AssemblyInfo.cs
+C:\Users\Dell\Downloads\first-main\obj\Debug\net7.0\first.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Downloads\first-main\obj\Debug\net7.0\first.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Dell\Downloads\first-main\obj\Debug\net7.0\first.RazorAssemblyInfo.cache
+C:\Users\Dell\Downloads\first-main\obj\Debug\net7.0\first.RazorAssemblyInfo.cs
+C:\Users\Dell\Downloads\first-main\obj\Debug\net7.0\first.dll
+C:\Users\Dell\Downloads\first-main\obj\Debug\net7.0\refint\first.dll
+C:\Users\Dell\Downloads\first-main\obj\Debug\net7.0\first.pdb
