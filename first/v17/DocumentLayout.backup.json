@@ -1,0 +1,378 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Dell\\Downloads\\first-main\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|c:\\users\\dell\\downloads\\first-main\\pages\\content\\work.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|solutionrelative:pages\\content\\work.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|c:\\users\\dell\\downloads\\first-main\\pages\\content\\restaurants.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|solutionrelative:pages\\content\\restaurants.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|c:\\users\\dell\\downloads\\first-main\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|solutionrelative:pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|c:\\users\\dell\\downloads\\first-main\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|solutionrelative:pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|c:\\users\\dell\\downloads\\first-main\\pages\\content\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|solutionrelative:pages\\content\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|c:\\users\\dell\\downloads\\first-main\\pages\\content\\signin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|solutionrelative:pages\\content\\signin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|c:\\users\\dell\\downloads\\first-main\\pages\\content\\recipes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|solutionrelative:pages\\content\\recipes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|c:\\users\\dell\\downloads\\first-main\\pages\\content\\my account.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|solutionrelative:pages\\content\\my account.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|c:\\users\\dell\\downloads\\first-main\\pages\\content\\logout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|solutionrelative:pages\\content\\logout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|c:\\users\\dell\\downloads\\first-main\\pages\\content\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|solutionrelative:pages\\content\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|c:\\users\\dell\\downloads\\first-main\\pages\\content\\funfacts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|solutionrelative:pages\\content\\funfacts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|c:\\users\\dell\\downloads\\first-main\\pages\\content\\contact us.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|solutionrelative:pages\\content\\contact us.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|c:\\users\\dell\\downloads\\first-main\\pages\\content\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|solutionrelative:pages\\content\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|c:\\users\\dell\\downloads\\first-main\\pages\\content\\my account.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|solutionrelative:pages\\content\\my account.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|c:\\users\\dell\\downloads\\first-main\\pages\\content\\signup.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|solutionrelative:pages\\content\\signup.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|c:\\users\\dell\\downloads\\first-main\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|c:\\users\\dell\\downloads\\first-main\\model\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|solutionrelative:model\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|c:\\users\\dell\\downloads\\first-main\\pages\\content\\signin.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|solutionrelative:pages\\content\\signin.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|c:\\users\\dell\\downloads\\first-main\\pages\\content\\logout.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|solutionrelative:pages\\content\\logout.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|c:\\users\\dell\\downloads\\first-main\\pages\\users\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|solutionrelative:pages\\users\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|c:\\users\\dell\\downloads\\first-main\\first.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{37A8FE2F-880F-4F4F-8247-2875AC6FC01A}|first.csproj|solutionrelative:first.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1653939156:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Recipes.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Content\\Recipes.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Content\\Recipes.cshtml",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Content\\Recipes.cshtml",
+              "RelativeToolTip": "Pages\\Content\\Recipes.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-25T10:11:34.912Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Restaurants.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Content\\Restaurants.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Content\\Restaurants.cshtml",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Content\\Restaurants.cshtml",
+              "RelativeToolTip": "Pages\\Content\\Restaurants.cshtml",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAAAGoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-24T17:05:15.307Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SignIn.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Content\\SignIn.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Content\\SignIn.cshtml",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Content\\SignIn.cshtml",
+              "RelativeToolTip": "Pages\\Content\\SignIn.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-23T12:38:48.486Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Work.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Content\\Work.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Content\\Work.cshtml",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Content\\Work.cshtml",
+              "RelativeToolTip": "Pages\\Content\\Work.cshtml",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAD8AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-22T22:38:15.803Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Index.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Index.cshtml",
+              "RelativeToolTip": "Pages\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-12T07:16:23.727Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Pages\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAJ8AAAAAAAAAAAAAAK8AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-17T09:32:06.28Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "My account.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Content\\My account.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Content\\My account.cshtml",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Content\\My account.cshtml",
+              "RelativeToolTip": "Pages\\Content\\My account.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-20T19:26:55.445Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Logout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Content\\Logout.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Content\\Logout.cshtml",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Content\\Logout.cshtml",
+              "RelativeToolTip": "Pages\\Content\\Logout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-22T22:36:51.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Content\\Index.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Content\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Content\\Index.cshtml",
+              "RelativeToolTip": "Pages\\Content\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-12T07:00:29.633Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SignUp.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Content\\SignUp.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Content\\SignUp.cshtml",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Content\\SignUp.cshtml",
+              "RelativeToolTip": "Pages\\Content\\SignUp.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-19T19:47:55.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "FunFacts.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Content\\FunFacts.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Content\\FunFacts.cshtml",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Content\\FunFacts.cshtml",
+              "RelativeToolTip": "Pages\\Content\\FunFacts.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-24T17:04:48.969Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Contact us.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Content\\Contact us.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Content\\Contact us.cshtml",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Content\\Contact us.cshtml",
+              "RelativeToolTip": "Pages\\Content\\Contact us.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-25T14:28:55.827Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AccessDenied.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Content\\AccessDenied.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Content\\AccessDenied.cshtml",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Content\\AccessDenied.cshtml",
+              "RelativeToolTip": "Pages\\Content\\AccessDenied.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-25T15:59:48.327Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "first.csproj",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\first-main\\first.csproj",
+              "RelativeDocumentMoniker": "first.csproj",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\first-main\\first.csproj",
+              "RelativeToolTip": "first.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-20T17:59:07.694Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Logout.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Content\\Logout.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Content\\Logout.cshtml.cs",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Content\\Logout.cshtml.cs",
+              "RelativeToolTip": "Pages\\Content\\Logout.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T18:44:28.887Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "My account.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Content\\My account.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Content\\My account.cshtml.cs",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Content\\My account.cshtml.cs",
+              "RelativeToolTip": "Pages\\Content\\My account.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T19:58:29.316Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "SignIn.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Content\\SignIn.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Content\\SignIn.cshtml.cs",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Content\\SignIn.cshtml.cs",
+              "RelativeToolTip": "Pages\\Content\\SignIn.cshtml.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAQwD8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T16:42:48.246Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "SignUp.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Content\\SignUp.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Content\\SignUp.cshtml.cs",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Content\\SignUp.cshtml.cs",
+              "RelativeToolTip": "Pages\\Content\\SignUp.cshtml.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAowB8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T20:04:23.326Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Helper.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\first-main\\Model\\Helper.cs",
+              "RelativeDocumentMoniker": "Model\\Helper.cs",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\first-main\\Model\\Helper.cs",
+              "RelativeToolTip": "Model\\Helper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIgAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T15:30:10.21Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\first-main\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\first-main\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-21T22:23:15.222Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Users\\Index.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Users\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\first-main\\Pages\\Users\\Index.cshtml",
+              "RelativeToolTip": "Pages\\Users\\Index.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAAQAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-26T06:43:15.907Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
